@@ -167,8 +167,8 @@ forceCoeffs_NEMO4_Fuselage
 
 forceCoeffs_NEMO4_PropDisk
 {
-	patches         (NEMO4_PropDisk);
-    
+        patches         (NEMO4_PropDisk);
+
     type            forceCoeffs;
 
     libs            ("libforces.so");
@@ -185,8 +185,8 @@ forceCoeffs_NEMO4_PropDisk
     CofR            (0 0 0);
     pitchAxis       (0 1 0);
     magUInf         28;
-    lRef            1;        
-    Aref            0.73;        
+    lRef            1;
+    Aref            0.73;
     /*
     binData
     {

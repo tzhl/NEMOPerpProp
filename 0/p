@@ -38,6 +38,11 @@ boundaryField
     {
         type            symmetryPlane;
     }
+    NEMO4_PropDisk
+    {
+        type            freestreamPressure;
+        
+    }
 }
 
 // ************************************************************************* //

@@ -17,27 +17,31 @@ FoamFile
 
 actions
 (
+    
 
     {
-        name    actuationDisk1CellSet;
-        type    cellSet;
+        name    PropDiskFaces;
+        type    faceSet;
         action  new;
-        source  zoneToCell;
+        source  patchToFace;
         sourceInfo
         {
-            NEMO4_PropDisk;
+            name NEMO4_PropDisk;
         }
     }
     {
-        name    actuationDisk1;
-        type    cellZoneSet;
+        name    PropDisk;
+        type    cellSet;
         action  new;
-        source  setToCellZone;
+        source  faceToCell;
         sourceInfo
         {
-            set actuationDisk1CellSet;
+            set PropDiskFaces;
+            option owner;
         }
     }
+    
+    
 
 );
 

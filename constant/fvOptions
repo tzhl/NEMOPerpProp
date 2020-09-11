@@ -21,12 +21,13 @@ NEMO4_PropDisk1
 
     fields      (U);
 
-    selectionMode   cellSet;
-    cellSet         actuationDisk1;
+    selectionMode   all;
+    cellSet         propDisk;
     diskDir         (1 0 0);    // Orientation of the disk
     Cp              0.036252;
     Ct              0.04;
     diskArea        0.24524642;
+    upstreamPoint   (-2.5 0 0);
 
 }
 

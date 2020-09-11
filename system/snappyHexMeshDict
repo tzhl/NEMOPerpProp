@@ -224,8 +224,7 @@ castellatedMeshControls
             level (5 6);
             patchInfo
             {
-                type wall;
-                inGroups (NEMOGroup);
+                type patch;
             }
         }
 		NEMO4_RearLG
@@ -442,7 +441,7 @@ addLayersControls
     // cannot be above minThickness do not add layer.
     // Relative to undistorted size of cell outside layer.
     minThickness 1e-4;
-    firstLayerThickness 0.0004;
+    firstLayerThickness 0.0006;
 
     // If points get not extruded do nGrow layers of connected faces that are
     // also not grown. This helps convergence of the layer addition process

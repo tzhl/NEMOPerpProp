@@ -42,6 +42,12 @@ boundaryField
     {
         type            symmetryPlane;
     }
+    NEMO4_PropDisk
+    {
+        type            fixedValue
+        value           $internalField
+        
+    }
 }
 
 // ************************************************************************* //
