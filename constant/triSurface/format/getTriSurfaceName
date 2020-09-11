@@ -1,0 +1,10 @@
+#!/bin/sh
+
+rm STLtriSurfaceName
+rm eMeshtriSurfaceName
+
+cd ..
+ls *.stl >> format/STLtriSurfaceName
+ls *.eMesh >> format/eMeshtriSurfaceName
+
+cd format

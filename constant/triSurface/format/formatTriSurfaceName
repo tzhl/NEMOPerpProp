@@ -1,0 +1,87 @@
+#!/bin/bash
+
+rm formattedtriSurfaceName.txt
+getTriSurfaceName
+
+echo "surfaceFeatureExtractDict" >> formattedtriSurfaceName.txt
+echo "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //" >> formattedtriSurfaceName.txt
+
+input="STLtriSurfaceName"
+
+while IFS= read -r line
+do
+  echo "$line" >>  formattedtriSurfaceName.txt
+  cat surfaceFeatureExtractFormat.txt >> formattedtriSurfaceName.txt
+done < "$input"
+echo "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //" >> formattedtriSurfaceName.txt
+echo "" >> formattedtriSurfaceName.txt
+
+
+echo "snappyHexMeshDict-Geometry" >> formattedtriSurfaceName.txt
+echo "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //" >> formattedtriSurfaceName.txt
+while IFS= read -r line
+do
+  echo -e "\t$line" | cut -d'.' -f1 >>  formattedtriSurfaceName.txt
+  echo -e "\t{" >>  formattedtriSurfaceName.txt
+  echo -e "\t\ttype triSurfaceMesh;" >>  formattedtriSurfaceName.txt
+  echo -e "\t\tfile \"$line\";" >>  formattedtriSurfaceName.txt
+  echo -e "\t}" >>  formattedtriSurfaceName.txt
+done < "$input"
+echo "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //" >> formattedtriSurfaceName.txt
+echo "" >> formattedtriSurfaceName.txt
+
+
+echo "snappyHexMeshDict-features" >> formattedtriSurfaceName.txt
+echo "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //" >> formattedtriSurfaceName.txt
+
+input="eMeshtriSurfaceName"
+
+while IFS= read -r line
+do
+  echo -e "\t\t{" >>  formattedtriSurfaceName.txt
+  echo -e "\t\t\tfile \"$line\";" >>  formattedtriSurfaceName.txt
+  echo -e "\t\t\tlevel 6;" >>  formattedtriSurfaceName.txt
+  echo -e "\t\t}" >>  formattedtriSurfaceName.txt
+done < "$input"
+echo "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //" >> formattedtriSurfaceName.txt
+echo "" >> formattedtriSurfaceName.txt
+
+
+echo "snappyHexMeshDict-Surface Refinement" >> formattedtriSurfaceName.txt
+echo "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //" >> formattedtriSurfaceName.txt
+while IFS= read -r line
+do
+  echo -e "\t\t$line" | cut -d'.' -f1 >>  formattedtriSurfaceName.txt
+  cat snappySurfaceRefinement.txt >> formattedtriSurfaceName.txt
+done < "$input"
+echo "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //" >> formattedtriSurfaceName.txt
+echo "" >> formattedtriSurfaceName.txt
+
+
+echo "snappyHexMeshDict-Refinement Region" >> formattedtriSurfaceName.txt
+echo "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //" >> formattedtriSurfaceName.txt
+while IFS= read -r line
+do
+  echo -e "\t\t$line" | cut -d'.' -f1 >>  formattedtriSurfaceName.txt
+  echo -e "\t\t{" >>  formattedtriSurfaceName.txt
+  echo -e "\t\t\tmode outside;" >>  formattedtriSurfaceName.txt
+  echo -e "\t\t\tlevels ((1E15 1));" >>  formattedtriSurfaceName.txt
+  echo -e "\t\t}" >>  formattedtriSurfaceName.txt
+done < "$input"
+echo "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //" >> formattedtriSurfaceName.txt
+echo "" >> formattedtriSurfaceName.txt
+
+
+echo "snappyHexMeshDict-Layer Addition" >> formattedtriSurfaceName.txt
+echo "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //" >> formattedtriSurfaceName.txt
+while IFS= read -r line
+do
+  pattern="eMesh"
+  stringReplace="*"
+  echo -e "\t\t\"${line/$pattern/$stringReplace}\""  >>  formattedtriSurfaceName.txt                
+  echo -e "\t\t{" >>  formattedtriSurfaceName.txt
+  echo -e "\t\t\tnSurfaceLayers 5;" >>  formattedtriSurfaceName.txt
+  echo -e "\t\t}" >>  formattedtriSurfaceName.txt
+done < "$input"
+echo "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //" >> formattedtriSurfaceName.txt
+echo "" >> formattedtriSurfaceName.txt

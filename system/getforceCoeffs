@@ -1,0 +1,29 @@
+#!/bin/bash
+
+rm forceCoeffs
+
+echo -e "/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5                                     |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/\n" >> forceCoeffs
+
+input="../constant/triSurface/format/STLtriSurfaceName"
+
+while IFS= read -r line
+do
+  echo "forceCoeffs_$line" | cut -d'.' -f1 >>  forceCoeffs
+  echo "{" >> forceCoeffs
+  pattern=".stl"
+  stringReplace=");"
+  echo -e "\tpatches         (${line/$pattern/$stringReplace}"  >>  forceCoeffs
+  cat forceCoeffsFormat.txt >> forceCoeffs
+
+done < "$input"
+
+echo "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //" >> formattedtriSurfaceName.txt
+echo "" >> forceCoeffs
+
+

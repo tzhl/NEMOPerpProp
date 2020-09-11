@@ -1,0 +1,119 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5                                     |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      surfaceFeatureExtractDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+NEMO4_Boom.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
+NEMO4_Engine.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
+NEMO4_FrontLG.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
+NEMO4_FrontQuadProp.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
+NEMO4_Fuselage.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
+NEMO4_RearLG.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
+NEMO4_RearQuadProp.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
+NEMO4_Wing.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
+
+
+
+
+// ************************************************************************* //
+
+
+

@@ -1,0 +1,336 @@
+surfaceFeatureExtractDict
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+NEMO4_Boom.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
+NEMO4_Engine.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
+NEMO4_FrontLG.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
+NEMO4_FrontQuadProp.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
+NEMO4_Fuselage.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
+NEMO4_RearLG.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
+NEMO4_RearQuadProp.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
+NEMO4_Wing.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+snappyHexMeshDict-Geometry
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+	NEMO4_Boom
+	{
+		type triSurfaceMesh;
+		file "NEMO4_Boom.stl";
+	}
+	NEMO4_Engine
+	{
+		type triSurfaceMesh;
+		file "NEMO4_Engine.stl";
+	}
+	NEMO4_FrontLG
+	{
+		type triSurfaceMesh;
+		file "NEMO4_FrontLG.stl";
+	}
+	NEMO4_FrontQuadProp
+	{
+		type triSurfaceMesh;
+		file "NEMO4_FrontQuadProp.stl";
+	}
+	NEMO4_Fuselage
+	{
+		type triSurfaceMesh;
+		file "NEMO4_Fuselage.stl";
+	}
+	NEMO4_RearLG
+	{
+		type triSurfaceMesh;
+		file "NEMO4_RearLG.stl";
+	}
+	NEMO4_RearQuadProp
+	{
+		type triSurfaceMesh;
+		file "NEMO4_RearQuadProp.stl";
+	}
+	NEMO4_Wing
+	{
+		type triSurfaceMesh;
+		file "NEMO4_Wing.stl";
+	}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+snappyHexMeshDict-features
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+		{
+			file "NEMO4_Boom.eMesh";
+			level 6;
+		}
+		{
+			file "NEMO4_Engine.eMesh";
+			level 6;
+		}
+		{
+			file "NEMO4_FrontLG.eMesh";
+			level 6;
+		}
+		{
+			file "NEMO4_FrontQuadProp.eMesh";
+			level 6;
+		}
+		{
+			file "NEMO4_Fuselage.eMesh";
+			level 6;
+		}
+		{
+			file "NEMO4_RearLG.eMesh";
+			level 6;
+		}
+		{
+			file "NEMO4_RearQuadProp.eMesh";
+			level 6;
+		}
+		{
+			file "NEMO4_Wing.eMesh";
+			level 6;
+		}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+snappyHexMeshDict-Surface Refinement
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+		NEMO4_Boom
+        {
+            level (5 6);
+            patchInfo
+            {
+                type wall;
+                inGroups (NEMOGroup);
+            }
+        }
+		NEMO4_Engine
+        {
+            level (5 6);
+            patchInfo
+            {
+                type wall;
+                inGroups (NEMOGroup);
+            }
+        }
+		NEMO4_FrontLG
+        {
+            level (5 6);
+            patchInfo
+            {
+                type wall;
+                inGroups (NEMOGroup);
+            }
+        }
+		NEMO4_FrontQuadProp
+        {
+            level (5 6);
+            patchInfo
+            {
+                type wall;
+                inGroups (NEMOGroup);
+            }
+        }
+		NEMO4_Fuselage
+        {
+            level (5 6);
+            patchInfo
+            {
+                type wall;
+                inGroups (NEMOGroup);
+            }
+        }
+		NEMO4_RearLG
+        {
+            level (5 6);
+            patchInfo
+            {
+                type wall;
+                inGroups (NEMOGroup);
+            }
+        }
+		NEMO4_RearQuadProp
+        {
+            level (5 6);
+            patchInfo
+            {
+                type wall;
+                inGroups (NEMOGroup);
+            }
+        }
+		NEMO4_Wing
+        {
+            level (5 6);
+            patchInfo
+            {
+                type wall;
+                inGroups (NEMOGroup);
+            }
+        }
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+snappyHexMeshDict-Refinement Region
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+		NEMO4_Boom
+		{
+			mode outside;
+			levels ((1E15 1));
+		}
+		NEMO4_Engine
+		{
+			mode outside;
+			levels ((1E15 1));
+		}
+		NEMO4_FrontLG
+		{
+			mode outside;
+			levels ((1E15 1));
+		}
+		NEMO4_FrontQuadProp
+		{
+			mode outside;
+			levels ((1E15 1));
+		}
+		NEMO4_Fuselage
+		{
+			mode outside;
+			levels ((1E15 1));
+		}
+		NEMO4_RearLG
+		{
+			mode outside;
+			levels ((1E15 1));
+		}
+		NEMO4_RearQuadProp
+		{
+			mode outside;
+			levels ((1E15 1));
+		}
+		NEMO4_Wing
+		{
+			mode outside;
+			levels ((1E15 1));
+		}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+snappyHexMeshDict-Layer Addition
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+		"NEMO4_Boom.*"
+		{
+			nSurfaceLayers 5;
+		}
+		"NEMO4_Engine.*"
+		{
+			nSurfaceLayers 5;
+		}
+		"NEMO4_FrontLG.*"
+		{
+			nSurfaceLayers 5;
+		}
+		"NEMO4_FrontQuadProp.*"
+		{
+			nSurfaceLayers 5;
+		}
+		"NEMO4_Fuselage.*"
+		{
+			nSurfaceLayers 5;
+		}
+		"NEMO4_RearLG.*"
+		{
+			nSurfaceLayers 5;
+		}
+		"NEMO4_RearQuadProp.*"
+		{
+			nSurfaceLayers 5;
+		}
+		"NEMO4_Wing.*"
+		{
+			nSurfaceLayers 5;
+		}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+

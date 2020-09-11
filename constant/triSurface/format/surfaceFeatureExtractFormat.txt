@@ -1,0 +1,11 @@
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
