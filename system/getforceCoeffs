@@ -23,7 +23,7 @@ do
 
 done < "$input"
 
-echo "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //" >> formattedtriSurfaceName.txt
+echo "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //" >> forceCoeffs
 echo "" >> forceCoeffs
 
 

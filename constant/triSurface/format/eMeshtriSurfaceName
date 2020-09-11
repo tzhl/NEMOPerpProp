@@ -3,6 +3,7 @@ NEMO4_Engine.eMesh
 NEMO4_FrontLG.eMesh
 NEMO4_FrontQuadProp.eMesh
 NEMO4_Fuselage.eMesh
+NEMO4_PropDisk.eMesh
 NEMO4_RearLG.eMesh
 NEMO4_RearQuadProp.eMesh
 NEMO4_Wing.eMesh

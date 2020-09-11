@@ -16,7 +16,7 @@
     pitchAxis       (0 1 0);
     magUInf         28;
     lRef            1;        
-    Aref            0.6394;        
+    Aref            0.73;        
     /*
     binData
     {

@@ -26,7 +26,7 @@ forceCoeffs_NEMO4_Boom
     pitchAxis       (0 1 0);
     magUInf         28;
     lRef            1;        
-    Aref            0.6394;        
+    Aref            0.73;        
     /*
     binData
     {
@@ -58,7 +58,7 @@ forceCoeffs_NEMO4_Engine
     pitchAxis       (0 1 0);
     magUInf         28;
     lRef            1;        
-    Aref            0.6394;        
+    Aref            0.73;        
     /*
     binData
     {
@@ -90,7 +90,7 @@ forceCoeffs_NEMO4_FrontLG
     pitchAxis       (0 1 0);
     magUInf         28;
     lRef            1;        
-    Aref            0.6394;        
+    Aref            0.73;        
     /*
     binData
     {
@@ -122,7 +122,7 @@ forceCoeffs_NEMO4_FrontQuadProp
     pitchAxis       (0 1 0);
     magUInf         28;
     lRef            1;        
-    Aref            0.6394;        
+    Aref            0.73;        
     /*
     binData
     {
@@ -154,7 +154,39 @@ forceCoeffs_NEMO4_Fuselage
     pitchAxis       (0 1 0);
     magUInf         28;
     lRef            1;        
-    Aref            0.6394;        
+    Aref            0.73;        
+    /*
+    binData
+    {
+        nBin        20;          // output data into 20 bins
+        direction   (1 0 0);     // bin direction
+        cumulative  yes;
+    }
+    */
+}
+
+forceCoeffs_NEMO4_PropDisk
+{
+	patches         (NEMO4_PropDisk);
+    
+    type            forceCoeffs;
+
+    libs            ("libforces.so");
+
+    writeControl    timeStep;
+    timeInterval    50;
+
+    log             yes;
+
+    rho             rhoInf;      // Indicates incompressible
+    rhoInf          1.225;
+    liftDir         (0 0 1);
+    dragDir         (1 0 0);
+    CofR            (0 0 0);
+    pitchAxis       (0 1 0);
+    magUInf         28;
+    lRef            1;        
+    Aref            0.73;        
     /*
     binData
     {
@@ -186,7 +218,7 @@ forceCoeffs_NEMO4_RearLG
     pitchAxis       (0 1 0);
     magUInf         28;
     lRef            1;        
-    Aref            0.6394;        
+    Aref            0.73;        
     /*
     binData
     {
@@ -218,7 +250,7 @@ forceCoeffs_NEMO4_RearQuadProp
     pitchAxis       (0 1 0);
     magUInf         28;
     lRef            1;        
-    Aref            0.6394;        
+    Aref            0.73;        
     /*
     binData
     {
@@ -250,7 +282,7 @@ forceCoeffs_NEMO4_Wing
     pitchAxis       (0 1 0);
     magUInf         28;
     lRef            1;        
-    Aref            0.6394;        
+    Aref            0.73;        
     /*
     binData
     {
@@ -261,4 +293,5 @@ forceCoeffs_NEMO4_Wing
     */
 }
 
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

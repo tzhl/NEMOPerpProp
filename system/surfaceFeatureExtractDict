@@ -73,6 +73,18 @@ NEMO4_Fuselage.stl
     }
     writeObj                yes;  
 }
+NEMO4_PropDisk.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs{includedAngle   150;}
+    subsetFeatures{openEdges       yes;}
+    trimFeatures
+    {
+        minElem          0;
+        minLen           0;
+    }
+    writeObj                yes;  
+}
 NEMO4_RearLG.stl
 {
     extractionMethod    extractFromSurface;
@@ -109,7 +121,6 @@ NEMO4_Wing.stl
     }
     writeObj                yes;  
 }
-
 
 
 

@@ -11,9 +11,9 @@
 Build  : 5.x-963176928289
 Exec   : C:/PROGRA~1/BLUECF~1/OpenFOAM-5.x/platforms/mingw_w64GccDPInt32Opt/bin/checkMesh.exe
 Date   : Sep 11 2020
-Time   : 05:22:30
+Time   : 14:59:19
 Host   : "ZHENLEE"
-PID    : 12988
+PID    : 8104
 I/O    : uncollated
 Case   : C:/PROGRA~1/BLUECF~1/OFUSER~1/NEMOPerpProp
 nProcs : 1
@@ -26,3 +26,31 @@ Create time
 
 Create polyMesh for time = 0
 
+Time = 0
+
+Mesh stats
+    points:           3977946
+    faces:            11777450
+    internal faces:   11622550
+    cells:            3900000
+    faces per cell:   6
+    boundary patches: 3
+    point zones:      0
+    face zones:       0
+    cell zones:       0
+
+Overall number of cells of each type:
+    hexahedra:     3900000
+    prisms:        0
+    wedges:        0
+    pyramids:      0
+    tet wedges:    0
+    tetrahedra:    0
+    polyhedra:     0
+
+Checking topology...
+    Boundary definition OK.
+    Cell to face addressing OK.
+    Point usage OK.
+    Upper triangular ordering OK.
+    Face vertices OK.

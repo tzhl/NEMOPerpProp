@@ -53,6 +53,11 @@ geometry
 		type triSurfaceMesh;
 		file "NEMO4_Fuselage.stl";
 	}
+	NEMO4_PropDisk
+	{
+		type triSurfaceMesh;
+		file "NEMO4_PropDisk.stl";
+	}
 	NEMO4_RearLG
 	{
 		type triSurfaceMesh;
@@ -118,38 +123,42 @@ castellatedMeshControls
     // This is a featureEdgeMesh, read from constant/triSurface for now.
     features
     (
-        {
-            file "NEMO4_Boom.eMesh";
-            level 6;
-        }
-        {
-            file "NEMO4_Engine.eMesh";
-            level 6;
-        }
-        {
-            file "NEMO4_FrontLG.eMesh";
-            level 6;
-        }
-        {
-            file "NEMO4_FrontQuadProp.eMesh";
-            level 6;
-        }
-        {
-            file "NEMO4_Fuselage.eMesh";
-            level 6;
-        }
-        {
-            file "NEMO4_RearLG.eMesh";
-            level 6;
-        }
-        {
-            file "NEMO4_RearQuadProp.eMesh";
-            level 6;
-        }
-        {
-            file "NEMO4_Wing.eMesh";
-            level 6;
-        }
+		{
+			file "NEMO4_Boom.eMesh";
+			level 6;
+		}
+		{
+			file "NEMO4_Engine.eMesh";
+			level 6;
+		}
+		{
+			file "NEMO4_FrontLG.eMesh";
+			level 6;
+		}
+		{
+			file "NEMO4_FrontQuadProp.eMesh";
+			level 6;
+		}
+		{
+			file "NEMO4_Fuselage.eMesh";
+			level 6;
+		}
+		{
+			file "NEMO4_PropDisk.eMesh";
+			level 6;
+		}
+		{
+			file "NEMO4_RearLG.eMesh";
+			level 6;
+		}
+		{
+			file "NEMO4_RearQuadProp.eMesh";
+			level 6;
+		}
+		{
+			file "NEMO4_Wing.eMesh";
+			level 6;
+		}
     );
 
 
@@ -202,6 +211,15 @@ castellatedMeshControls
             }
         }
 		NEMO4_Fuselage
+        {
+            level (5 6);
+            patchInfo
+            {
+                type wall;
+                inGroups (NEMOGroup);
+            }
+        }
+		NEMO4_PropDisk
         {
             level (5 6);
             patchInfo
@@ -279,6 +297,11 @@ castellatedMeshControls
 			levels ((1E15 1));
 		}
 		NEMO4_Fuselage
+		{
+			mode outside;
+			levels ((1E15 1));
+		}
+		NEMO4_PropDisk
 		{
 			mode outside;
 			levels ((1E15 1));
@@ -385,6 +408,10 @@ addLayersControls
 			nSurfaceLayers 5;
 		}
 		"NEMO4_Fuselage.*"
+		{
+			nSurfaceLayers 5;
+		}
+		"NEMO4_PropDisk.*"
 		{
 			nSurfaceLayers 5;
 		}
